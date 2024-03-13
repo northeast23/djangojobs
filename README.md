@@ -81,7 +81,7 @@ Django 관련 구인정보 제공
         - 로그인을 한 유저만 해당 기능을 사용  
         - 본인의 게시글이 아니라면 수정이 불가능 
         - 삭제를 완료한 이후에 게시글 목록 화면으로 돌아감 
-    10. 회원 프로필 조회 기능 
+    10. 나의 프로필 조회 
     11. 댓글 기능 
         - 댓글 추가
         - 대댓글
@@ -92,34 +92,25 @@ Django 관련 구인정보 제공
 sequenceDiagram
     actor U as User    
     participant W as Website
-    participant S as Web Server
+    participant S as Web Server(Django)
 
-    U->>W: Request recipe
-    W->>S: Query available recipes
-    S->>cGPT: API Call for recipes
-    cGPT-->>S: Return answers
+    U->>W: 구인정보 버튼 클릭
+    W->>S: 전체 구인정보 전달 요청
     S-->>W: Return data
-    W-->U: Display ingredients & recipe
-    
-    U->>W: Sign up
-    W->>S: Request user registration
-    S->>D: Write user info
-
-    U->>W: Agreed newsletter service
-    W->>S: Send user info 
-    S->>D: Modify user info for newsletter
-    S->>U: Send mails 
+    W-->U: 전체 구인정보 화면 출력 
+    U->>W: 구인정보 목록에서 키워드나 태그를 검색 
+    W->>S: 구인정보 전달 요청
+    S-->>W: Return data
+    W-->U: 검색 목록 화면 출력     
+    U->>W: 회원가입 버튼 클릭 
+    W->>S: Request accounts_create
+    S-->>W: Return data
+    W-->U: accounts_create form 출력 
 ```
-
-
-
 
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
-
-  
-![image](https://github.com/northeast23/Chantak/assets/155033413/6093f6b8-9d30-4fef-942e-e58825fc0420)
- 
+ <img width="573" alt="jobs 구조" src="https://github.com/northeast23/djangojobs/assets/155033413/910e58da-efb0-4e4e-bf1d-e61d07fa2d5e">
 
 ### 4.1 개발 일정(WBS)
 
@@ -134,22 +125,17 @@ gantt
     사이트기획 :a2, 24-03-03, 2d
 
     section 프론트엔드(FE)
-    chatGPT 연결 및 프롬프트 테스트 : 24-02-13, 1d
-    home 화면 : 24-02-14, 1d
-    로그인/로그아웃 : 24-02-15, 1d
-    회원가입 페이지 : 24-02-16, 1d
-    인증 접근 권한 : 24-02-19, 3d
-    유저 추가 : 24-02-22, 1d
-    프로필 페이지 : 24-02-23, 1d       
+    Bootstrap 적용: a4, 24-03-11, 3d
+
+    section 백엔드(BE)
+    서버사이드 구현:a3, 24-03-05, 5d
 ```
 
 ## 5. 와이어프레임 / UI / BM
 
 ### 5.1 화면 설계
-![image-1](https://github.com/northeast23/Chantak/assets/155033413/41395d5e-77f5-472b-99d4-1c33470f58bb)
 
-### 5.2 실행 화면
-![home](https://github.com/northeast23/Chantak/assets/155033413/c8f86f9d-881c-4c49-b6f5-585ba971de80)
+### 5.2 실행 화면 
 
 
 ## 6. 에러와 에러 해결
