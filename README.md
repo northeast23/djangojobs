@@ -6,24 +6,54 @@ Django 관련 구인정보 제공
 ### 1.1 서비스 목표
 -  일반 구인사이트보다 구체적인 일자리 정보 제공 
 
-### 1.2 시스템 기능
--  
+### 1.2 시스템 기능 및 메뉴 
+#### 1.2.1 시스템 기능 
+- 구인정보 조회
+- 구인정보 등록
+- 회원가입
+- 로그인
+#### 1.2.2 메인 메뉴 
+- Home
+- 구인정보 (조회)
+- 구인등록 (blog create)
+- FAQ
+- About Us
+  . About
+  . Contact
+- 로그인
+- 회원가입
 
 ## 2. 개발 환경 및 배포 URL
 ### 2.1 개발 스택
 - Django 5.0.3, Bootstrap 5.2.3 
 
 ### 2.2 배포 URL
-- [https://northeast23.github.io/Chantak](https://northeast23.github.io/Chantak/)
-
+- TBD
 
 ### 2.3 URL 구조
-
-
+#### main 
+""  
+'about/' 
+'contact/'
+'faq/'
+#### jobs 
+'jobs/'    
+'jobs/<int:pk>/'
+'jobs/create/'
+'jobs/<int:pk>/update/'
+'jobs/<int:pk>/delete/'
+'jobs/tag/<str:tag>/'
+#### accounts
+'accounts/singup/'
+'accounts/login/'
+'accounts/logout/'
+'accounts/profile/'
+'logincheck/'
 
 ## 3. 메인 기능 시퀀스 다이어그램 
 ### 3.1 메인 기능 
 ```
+
 - 필수 구현 요구사항
     1. 메인페이지 구현
         - 페이지 제목과 블로그 입장하기 버튼이 있습니다.
