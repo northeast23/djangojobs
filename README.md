@@ -136,6 +136,7 @@ gantt
 ### 5.1 화면 설계
 
 ### 5.2 실행 화면 
+![image](https://github.com/northeast23/djangojobs/assets/155033413/05c26ece-09ea-406f-b603-2a2989bb0301)
 
 
 ## 6. 에러와 에러 해결
